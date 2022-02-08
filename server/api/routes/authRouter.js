@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 const debug = require("debug")("property-exchange:auth");
 
 function generateJwt(user) {
+
   const payload = {
     id: user.id,
     email: user.email,
@@ -49,6 +50,8 @@ async function verifyJwt(req, res, next) {
 
 // called when signup post request is made
 async function signupFunction(req, res, next) {
+  // let isAuth = sequelize.authenticate();
+  console.log(`Entry here:`)
   const { email, password, user_type, ethereum_address } = req.body;
   let newUser;
 
@@ -60,13 +63,16 @@ async function signupFunction(req, res, next) {
       ethereum_address
     });
 
+    console.log("user created")
     const result = generateJwt(newUser);
+    if(result)
 
     res.status(200).json({
       message: "Signup success!!",
       user: result
     });
   } catch (err) {
+    console.log("error")
     debug(err);
     return res.status(500).json({
       message: "Account registration failed. Try again!",

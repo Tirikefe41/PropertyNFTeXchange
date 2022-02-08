@@ -6,6 +6,7 @@ const dbUrl = `postgres://${DB_USER}:${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`
 
 const sequelize = new Sequelize(dbUrl);
 
+
 sequelize
   .authenticate()
   .then(() => {

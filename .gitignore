@@ -5,6 +5,7 @@
 .infura_secret
 .env
 .env.development
+.secret
 
 # dependencies
 /node_modules

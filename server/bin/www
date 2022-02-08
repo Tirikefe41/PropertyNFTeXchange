@@ -7,12 +7,14 @@
 var app = require("../app");
 var debug = require("debug")("property-exchange:server");
 var http = require("http");
+require('custom-env').env()
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.SERVER_PORT || "3000");
+console.log(process.env.SERVER_PORT )
 app.set("port", port);
 
 /**

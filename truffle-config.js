@@ -19,10 +19,14 @@ require("dotenv").config();
  *
  */
 
-const HDWalletProvider = require("truffle-hdwallet-provider");
 
-const fs = require("fs");
+
 const path = require("path");
+
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+ const infuraURL = 'https://rinkeby.infura.io/v3/7ca09b31b69c4b10a32976b093af1b23';
+ const fs = require('fs');
+ const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -64,13 +68,9 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
     rinkeby: {
-      provider: () =>
-        new HDWalletProvider(
-          process.env.MNEMONIC,
-          `https://rinkeby.infura.io/v3/${process.env.INFURA_KEY}`
-        ),
+      provider: () => new HDWalletProvider(mnemonic, infuraURL),
       network_id: "4",
-      from: process.env.DEPLOYER_ADDRESS,
+      from: "0x34716293CC9b8C6f0BDFB3308f9abb1991e5407C",
       gas: 6000000
     }
 
