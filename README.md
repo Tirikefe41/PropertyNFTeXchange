@@ -2,7 +2,10 @@
 
 <br>
 
-## Author: Saketh Varma, Pericherla
+## Author: Saketh Varma, Pericherla 
+
+original repo exists here: <a href="https://github.com/socket-var/property-exchange">https://github.com/socket-var/property-exchange</a>
+Code uploaded here for testing and auditing purpose.
 
 Demo at <a href="https://youtu.be/EA9PAkR1seQ">https://youtu.be/EA9PAkR1seQ</a>
 
